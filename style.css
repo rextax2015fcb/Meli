@@ -1,0 +1,161 @@
+body {
+    background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+/* Estilos generales */
+.container, #mensajeEspecial, #mensajeFinal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Ocultar secciones por defecto */
+.oculto {
+    display: none;
+}
+
+/* Estilo del botón */
+#btnPresioname, #btnCerrar {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+#btnPresioname:hover, #btnCerrar:hover {
+    background-color: #d81b60;
+    transform: scale(1.1);
+}
+
+/* Fondo amarillo claro para la sección de foto y texto */
+#mensajeEspecial {
+    background-color: #fff9c4; /* Color amarillo suave */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo de la imagen */
+#fotoEspecial {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 3px solid #ff4081; /* Borde rosado para la foto */
+}
+
+/* Mensaje de texto */
+#mensajeTexto {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 80%;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+
+/* Mensaje final */
+#mensajeFinal {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4081;
+    opacity: 0;
+    animation: aparecer 2s forwards;
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+    0% { opacity: 0; transform: translate(-50%, -60%); }
+    100% { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Corazones */
+.heart {
+    position: absolute;
+    bottom: -40px;
+    width: 30px;
+    height: 30px;
+    background-color: #ff80ab;
+    transform: rotate(-45deg);
+    animation: floatUp 6s linear infinite;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff80ab;
+    border-radius: 50%;
+}
+
+.heart::before { top: -15px; left: 0; }
+.heart::after { left: 15px; top: 0; }
+
+@keyframes floatUp {
+    0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+    25% { transform: translateX(20px) translateY(-150px) rotate(-45deg); }
+    50% { transform: translateX(-20px) translateY(-300px) rotate(-45deg); }
+    75% { transform: translateX(15px) translateY(-450px) rotate(-45deg); }
+    100% { transform: translateX(0) translateY(-150vh) rotate(-45deg); opacity: 0; }
+}
+
+/* Estilos para flores y cohetes */
+.flor, .cohete {
+    position: absolute;
+    bottom: -20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: explosion 1s forwards, subir 3s forwards;
+}
+
+.cohete {
+    background-color: #ff80ab;
+    width: 10px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.flor {
+    background-color: #f48fb1;
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes explosion {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+@keyframes subir {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100vh); }
+}
+/* Estilo para el gif de Hello Kitty */
+#gifHelloKitty {
+    width: 150px; /* Ajusta el tamaño del gif según lo que desees */
+    height: auto;
+    margin-top: 20px;
+}
+
+
